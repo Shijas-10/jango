@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+
+<h2>Student List</h2>
+
+{% if students %}
+    <ul>
+    {% for student in students %}
+        <li>
+            {{ student.name }} - {{ student.grade }}
+            {% if student.passed %}
+                <span style="color:green;">Passed</span>
+            {% else %}
+                <span style="color:red;">Failed</span>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No students found.</p>
+{% endif %}
+
+</body>
+</html>
